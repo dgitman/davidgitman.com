@@ -1,6 +1,6 @@
 # Site settings
-title: "Jekyll Resume Template"
-description: "A resume template for Jekyll and GitHub Pages sites."
+title: "David Gitman's Resume"
+description: "Hands-On Chief Technology Officer"
 
 # Build settings
 markdown: kramdown
@@ -10,10 +10,10 @@ sass:
 
 # Resume settings
 resume_avatar:                  "true"
-resume_name:                    "Homer J. Simpson"
-resume_title:                   "Nuclear Safety Inspector"
+resume_name:                    "David Gitman"
+resume_title:                   "Hands-On Chief Technology Officer"
 resume_contact_email:
-  "homerjsimpson@youremailaddress.com"
+  "david@gitman.net"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
@@ -24,23 +24,23 @@ resume_looking_for_work:        "yes"
 # Decide which sections to use
 # comment out to hide
 resume_section_experience:      true
-resume_section_education:       true
+# resume_section_education:       true
 resume_section_projects:        true
 resume_section_skills:          true
-resume_section_recognition:     true
-resume_section_links:           true
+# resume_section_recognition:     true
+# resume_section_links:           true
 resume_section_associations:    true
 
 # Resume social links
 # uncomment the options you wish to display, and add your own URL
 resume_social_links:
-  resume_github_url:            "https://github.com/jglovier/resume-template"
-  resume_twitter_url:           "http://twitter.com/jglovier"
-  resume_dribbble_url:          "https://dribbble.com/jag"
-  # resume_facebook_url:          "insert Facebook URL here"
-  resume_linkedin_url:          "https://www.linkedin.com/in/joelglovier"
-  # resume_instagram_url:         "insert your Instagram URL here"
-  resume_website_url:           "http://joelglovier.com"
+  resume_github_url:            "https://github.com/dgitman/resume"
+  resume_twitter_url:           "https://twitter.com/dgitman"
+  # resume_dribbble_url:          "https://dribbble.com/jag"
+  resume_facebook_url:          "https://www.facebook.com/dgitman"
+  resume_linkedin_url:          "https://www.linkedin.com/in/dgitman"
+  resume_instagram_url:         "https://www.instagram.com/dgitman/"
+  resume_website_url:           "http://davidgitman.com"
 
 # Design settings
 resume_theme:                   default
