@@ -17,11 +17,11 @@ resume_title:                   "Multi-Exit, Multi-Failure Ecommerce Technologis
 resume_contact_email:           "david@gitman.net"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
-# resume_contact_telephone:       "555-7334"
-# resume_contact_address:         "Durham, NC"
+resume_contact_telephone:       "(646) 878-9184"
+resume_contact_address:         "Durham, NC"
 
-# resume_header_contact_info:     "Durham, NC • 555-7334 • "david@gitman.net"
-# display_header_contact_info:    "false"
+resume_header_contact_info:     "Durham, NC • (646) 878-9184 • "david@gitman.net"
+display_header_contact_info:    "true"
 
 resume_header_intro: "<p><b>Over 23 years of success deploying technical solutions that drive dramatic growth in sales, profit and market share</b></p>
 
