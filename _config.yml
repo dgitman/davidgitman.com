@@ -11,21 +11,22 @@ sass:
 # Resume settings
 resume_avatar:                  "true"
 resume_name:                    "David Gitman"
-resume_title:                   "Hands-On Chief Technology Officer"
+resume_title:                   "Multi-Exit, Multi-Failure Ecommerce Technologist
+"
 
 # used for the contact button in _layouts/resume.html
 resume_contact_email:           "david@gitman.net"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
 # resume_contact_telephone:       "555-7334"
-# resume_contact_address:         "742 Evergreen Terrace, Springfield"
+# resume_contact_address:         "Durham, NC"
 
-# resume_header_contact_info:     "742 Evergreen Terrace, Springfield • 555-7334 • lisasimpson@youremailaddress.com"
+# resume_header_contact_info:     "Durham, NC • 555-7334 • "david@gitman.net"
 # display_header_contact_info:    "false"
 
-resume_header_intro: "<p><b>Over 15 years of success deploying technical solutions that drive dramatic growth in sales, profit and market share</b></p>
+resume_header_intro: "<p><b>Over 23 years of success deploying technical solutions that drive dramatic growth in sales, profit and market share</b></p>
 
-<p><b>Highly creative entrepreneur with a 15-year track record of innovation and success.</b> Strength in conceptualizing, recommending, architecting and aligning technology investments with evolving business, market and client needs.</p>
+<p><b>Highly creative entrepreneur with a 23-year track record of innovation and success.</b> Strength in conceptualizing, recommending, architecting and aligning technology investments with evolving business, market and client needs.</p>
 
 <p><b>Background includes leading the design and development of solutions for such industry leaders</b> as MediaLink Worldwide, eBay, ToysRUs.com and TheGlobe.com complemented by leading e-commerce development firm from $400K in revenues to over $8.5M in 4 years.</p>
 
