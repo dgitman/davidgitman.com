@@ -11,8 +11,7 @@ sass:
 # Resume settings
 resume_avatar:                  "true"
 resume_name:                    "David Gitman"
-resume_title:                   "Multi-Exit, Multi-Failure Ecommerce Technologist
-"
+resume_title:                   "Multi-Exit, Multi-Failure Ecommerce Technologist"
 
 # used for the contact button in _layouts/resume.html
 resume_contact_email:           "david@gitman.net"
