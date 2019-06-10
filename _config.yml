@@ -1,6 +1,6 @@
 # Site settings
 title: "David Gitman's Resume"
-description: "Hands-On Chief Technology Officer"
+description: "Multi-Exit, Multi-Failure Ecommerce Technologist"
 
 # Build settings
 markdown: kramdown
@@ -59,7 +59,7 @@ resume_social_links:
   resume_twitter_url:           "https://twitter.com/dgitman"
   # resume_dribbble_url:          "https://dribbble.com/jag"
   resume_facebook_url:          "https://www.facebook.com/dgitmane"
-  resume_linkedin_url:          "https://www.facebook.com/dgitman"
+  resume_linkedin_url:          "https://www.linkedin.com/in/dgitman/"
   resume_instagram_url:         "https://www.instagram.com/dgitman"
   resume_website_url:           "https://davidgitman.com"
   resume_medium_url:            "https://medium.com/@dgitman"
