@@ -20,7 +20,7 @@ resume_contact_email:           "david@gitman.net"
 resume_contact_telephone:       "(646) 878-9184"
 resume_contact_address:         "Durham, NC"
 
-resume_header_contact_info:     "Durham, NC • (646) 878-9184 • "david@gitman.net"
+resume_header_contact_info:     "Durham, NC • (646) 878-9184 • david@gitman.net"
 display_header_contact_info:    "true"
 
 resume_header_intro: "<p><b>Over 23 years of success deploying technical solutions that drive dramatic growth in sales, profit and market share</b></p>
@@ -66,3 +66,9 @@ resume_theme:                   default
 # Note: when editing locally, remember to restart
 # your Jekyll server when you edit this file. Changes
 # to _config.yml are only recognized when the server starts
+
+plugins:
+  - jekyll-remote-theme
+
+remote_theme: jglovier/resume-template@gh-pages
+
