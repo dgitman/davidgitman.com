@@ -1,12 +1,45 @@
 # Skills
-# Organizational leadership
-- skill: Organizational leadership
-  description: I have several years of experience leading organziations from community groups to business departments. From public speaking, to mentoring, to coordination of people and events, I can lead in any context.
 
-# Communications strategy
-- skill: Communications strategy
-  description: Content and marketing strategy,
+# Operating Systems
+- skill: Operating Systems
+  description: Cisco IOS, MS Windows, Linux, Sun Solaris, BSD
 
-# Digital content development and creation
-- skill: Digital content development and creation
-  description: Copy writing, graphic design, web design, front-end web development, print design
+# Languages & Databases
+- skill: Languages &amp; Databases
+  description: HTML, CSS, PHP, PERL, Bash, BASIC, MySQL, MS SQL, Oracle,
+    Sybase, PostgreSQL
+
+# Software & Tools
+- skill: Software &amp; Tools
+  description: MS Exchange, IIS, VSS, Office, Visio, Project, Backup Exec,
+    NetBackup, Amanda, Bacula, SVN Resonate, Symantec Antivirus, Mcafee
+    VirusScan, Trend Micro Officescan, VMware Enterprise, Blackberry Enterprise
+    Server, Atlassian JIRA, Confluence, Remedy, Apache, Tomcat, BIND, Sendmail,
+    Qmail, SpamAssassin, ClamAV, F5 BigIP, 3DNS Ghost, Asterisk, , Ethereal,
+    tcpdump
+
+# Security
+- skill: Security
+  description: Cisco PIX/ASA, Policy Manager, Access Control Server, VPN,
+    Intrusion Detection, Security Scanner, CheckPoint Firewall-1, Raptor
+    Firewall, Watchguard, ISS Real Secure, Internet / System / Database
+    Scanners, RSA SecureID / Keon, Snort, Nessus
+
+# Network & Application Monitoring Platforms
+- skill: Network &amp; Application Monitoring Platforms
+  description: OpenNMS, Zenoss, Splunk, Nagios / Net Saint MRTG, Cricket, Big
+    Brother, Nmap, RANCID, NetFlow Monitor, Webalizer, AWstats, Cisco Works, HP
+    OpenView, Concord Network Health, MicroMuse Net Cool, Solarwinds Orion,
+    SiteScope
+
+# Storage
+- skill: Storage
+  description: EMC Symmetrix, Clariion, Dell Equallogic, 3par InsSrv
+
+# Protocols
+- skill: Protocols
+  description: ARP, IP, ICMP, RIP, OSPF, E/IGRP, BGP, TCP, UDP, FTP, SSH,
+    Telnet, SMTP, WINS, WHOIS, GRE, TACACS, DNS, TFTP, HTTP, Kerberos, POP3,
+    SFTP, NNTP, NTP, NetBIOS, IMAP, SNMP, BGP, IRC, LDAP, HTTPS, ISAKMP,
+    Syslog, RIP, RPC, DHCP, iSCSI, rsync, NFS, IPSec, RADIUS, RTMP, HSRP, SCCP,
+    MGCP, SIP, Active Directory
