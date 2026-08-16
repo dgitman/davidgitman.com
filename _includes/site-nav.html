@@ -1,0 +1,10 @@
+<nav class="site-nav no-print" aria-label="Primary navigation">
+  <a class="site-brand" href="{{ '/' | relative_url }}">David Gitman</a>
+  <div class="site-nav-links">
+    <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+    <a href="{{ '/expertise/' | relative_url }}"{% if page.url contains '/expertise/' %} aria-current="page"{% endif %}>Expertise</a>
+    <a href="{{ '/case-studies/' | relative_url }}"{% if page.url contains '/case-studies/' %} aria-current="page"{% endif %}>Case Studies</a>
+    <a href="{{ '/#projects' | relative_url }}">Projects</a>
+    <a href="{{ '/#experience' | relative_url }}">Résumé</a>
+  </div>
+</nav>

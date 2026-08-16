@@ -1,21 +1,9 @@
-{% assign profile_url = site.resume_social_links.resume_website_url | default: site.url | default: 'https://example.com' %}
-{% unless profile_url contains '://' %}
-  {% assign profile_url = profile_url | prepend: 'https://' %}
-{% endunless %}
-{% unless profile_url contains '.com/' or profile_url contains '.dev/' or profile_url contains '.io/' %}
-  {% assign profile_url = profile_url | append: '/' %}
-{% endunless %}
-
+{% assign profile_url = site.url | append: '/' %}
 {% assign schema_job_title = site.resume_schema_job_title | default: site.resume_title %}
-{% assign address_region = site.resume_contact_address_region | default: 'NC' %}
-{% assign address_country = site.resume_contact_address_country | default: 'US' %}
-{% assign last_jobs = site.data.experience | where_exp: "job", "job.sort_last == true" %}
 {% assign regular_jobs = site.data.experience | where_exp: "job", "job.sort_last != true" %}
 {% assign present_jobs = regular_jobs | where_exp: "job", "job.sort_end >= 999912" | sort: 'sort_start' | reverse %}
-{% assign past_jobs = regular_jobs | where_exp: "job", "job.sort_end < 999912" | sort: 'sort_end' %}
-{% assign past_jobs = past_jobs | sort: 'sort_start' | reverse %}
-{% assign json_ld_jobs = present_jobs | concat: past_jobs | concat: last_jobs %}
 {% assign current_job = present_jobs | first %}
+{% assign modified_date = page.last_modified_at | default: site.last_modified_at %}
 
 <script type="application/ld+json">
 {
@@ -26,36 +14,29 @@
       "@id": {{ profile_url | append: '#webpage' | jsonify }},
       "url": {{ profile_url | jsonify }},
       "name": {{ site.title | jsonify }},
-      "description": {{ site.description | jsonify }},
+      "description": {{ page.description | default: site.description | jsonify }},
       "inLanguage": "en-US",
-      "dateModified": {{ site.time | date: '%Y-%m-%d' | jsonify }},
+      "dateModified": {{ modified_date | jsonify }},
       "mainEntity": {
         "@id": {{ profile_url | append: '#person' | jsonify }}
-      }{% if json_ld_jobs.size > 0 %},
-      "hasPart": [
-        {%- for job in json_ld_jobs -%}
-        {
-          "@id": {{ profile_url | append: '#role-' | append: forloop.index | jsonify }}
-        }{% unless forloop.last %},{% endunless %}
-        {%- endfor -%}
-      ]{% endif %}
+      }
     },
     {
       "@type": "Person",
       "@id": {{ profile_url | append: '#person' | jsonify }},
       "name": {{ site.resume_name | jsonify }},
+      "alternateName": "dgitman",
       "givenName": "David",
       "familyName": "Gitman",
       "jobTitle": {{ schema_job_title | jsonify }},
       "email": {{ site.resume_contact_email | jsonify }},
       "telephone": {{ site.resume_contact_telephone | jsonify }},
       "url": {{ profile_url | jsonify }},
-      "description": {{ site.resume_header_intro | strip_html | strip_newlines | replace: '&rsquo;', "'" | replace: '&ldquo;', '"' | replace: '&rdquo;', '"' | replace: '&mdash;', '—' | replace: '&amp;', '&' | jsonify }},
+      "description": {{ site.description | jsonify }},
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": {{ site.resume_contact_address | jsonify }},
-        "addressRegion": {{ address_region | jsonify }},
-        "addressCountry": {{ address_country | jsonify }}
+        "addressRegion": {{ site.resume_contact_address_region | jsonify }},
+        "addressCountry": {{ site.resume_contact_address_country | jsonify }}
       },
       "homeLocation": {
         "@type": "Place",
@@ -73,16 +54,11 @@
           "@type": "AdministrativeArea",
           "name": {{ current_job.location | jsonify }}
         }{% endif %}
-      }{% endif %}{% if site.resume_avatar == 'true' %},
-      "image": {{ profile_url | append: 'images/avatar.jpg' | jsonify }}{% endif %}{% if site.resume_social_links %},
+      }{% endif %},
+      "image": {{ profile_url | append: 'images/avatar-190.jpg' | jsonify }}{% if site.seo_same_as and site.seo_same_as.size > 0 %},
       "sameAs": [
-        {%- assign same_as_first = true -%}
-        {%- for social in site.resume_social_links -%}
-          {%- if social[1] and social[1] != '' and social[1] contains 'http' -%}
-            {%- unless same_as_first -%},{%- endunless -%}
-            {{ social[1] | jsonify }}
-            {%- assign same_as_first = false -%}
-          {%- endif -%}
+        {%- for url in site.seo_same_as -%}
+        {{ url | jsonify }}{% unless forloop.last %},{% endunless %}
         {%- endfor -%}
       ]{% endif %}{% if site.resume_section_education and site.data.education.size > 0 %},
       "alumniOf": [
@@ -123,33 +99,7 @@
         {{ recognition.award | jsonify }}{% unless forloop.last %},{% endunless %}
         {%- endfor -%}
       ]{% endif %}
-    }{% if site.resume_section_experience and json_ld_jobs.size > 0 %},
-    {%- for job in json_ld_jobs -%}
-    {%- assign start_str = job.sort_start | append: '' -%}
-    {%- assign end_str = job.sort_end | append: '' -%}
-    {%- assign start_date = '' -%}
-    {%- assign end_date = '' -%}
-    {%- if start_str.size >= 6 -%}
-      {%- assign start_year = start_str | slice: 0, 4 -%}
-      {%- assign start_month = start_str | slice: 4, 2 -%}
-      {%- assign start_date = start_year | append: '-' | append: start_month | append: '-01' -%}
-    {%- endif -%}
-    {%- if end_str.size >= 6 and end_str != '999912' -%}
-      {%- assign end_year = end_str | slice: 0, 4 -%}
-      {%- assign end_month = end_str | slice: 4, 2 -%}
-      {%- assign end_date = end_year | append: '-' | append: end_month | append: '-01' -%}
-    {%- endif -%}
-    {%- assign role_label = job.position | append: ' — ' | append: job.company -%}
-    {
-      "@type": "OrganizationRole",
-      "@id": {{ profile_url | append: '#role-' | append: forloop.index | jsonify }},
-      "roleName": {{ role_label | jsonify }}{% if start_date != '' %},
-      "startDate": {{ start_date | jsonify }}{% endif %}{% if end_date != '' %},
-      "endDate": {{ end_date | jsonify }}{% endif %}{% if job.summary and job.summary != '' %},
-      "description": {{ job.summary | strip_html | strip_newlines | replace: '&rsquo;', "'" | replace: '&ldquo;', '"' | replace: '&rdquo;', '"' | replace: '&mdash;', '—' | replace: '&amp;', '&' | jsonify }}{% endif %}
-    }{% unless forloop.last %},{% endunless %}
-    {%- endfor -%}
-    {% endif %}
+    }
   ]
 }
 </script>

@@ -4,7 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% seo %}
-  <meta property="og:type" content="profile">
   <meta property="og:image:alt" content="David Gitman — Technology Leader in eCommerce, Cloud &amp; AI">
   <meta name="twitter:image:alt" content="David Gitman — Technology Leader in eCommerce, Cloud &amp; AI">
 
@@ -19,11 +18,15 @@
 
   <!-- Google font typography settings - defined in _config.yml -->
   {% if site.resume_theme == 'default' %}
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&amp;family=Open+Sans:wght@300;400;700;800&amp;display=swap" rel="stylesheet">
   {% endif %}
 
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  {% include json-ld-resume.html %}
+  <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  {% if page.url == '/' %}
+    {% include json-ld-resume.html %}
+  {% else %}
+    {% include json-ld-content.html %}
+  {% endif %}
 </head>

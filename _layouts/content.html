@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  {% include head.html %}
+  <body class="theme-{% if site.resume_theme %}{{ site.resume_theme }}{% endif %}">
+    <div class="wrapper">
+      {% include site-nav.html %}
+      <main class="content-page">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          {% if page.breadcrumb_parent and page.breadcrumb_parent_url %}
+            <span aria-hidden="true">/</span>
+            <a href="{{ page.breadcrumb_parent_url | relative_url }}">{{ page.breadcrumb_parent }}</a>
+          {% endif %}
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{{ page.title }}</span>
+        </nav>
+        <header class="content-page-header">
+          {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+          <h1>{{ page.title }}</h1>
+          {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+        </header>
+        <div class="prose">
+          {{ content }}
+        </div>
+      </main>
+      {% include site-footer.html %}
+    </div>
+  </body>
+</html>
