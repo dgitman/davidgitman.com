@@ -1,10 +1,15 @@
 # Site settings
 url: "https://davidgitman.com"
 title: David Gitman
-description: "David Gitman is a technology leader in eCommerce, cloud infrastructure, and AI automation. CTO, founder, and operator with 30+ years building digital commerce platforms."
+description: "David Gitman is an eCommerce, cloud, and AI technology leader with 30+ years scaling digital platforms, infrastructure, and automation."
 lang: en_US
 image: /images/og-banner.jpg
-logo: /images/avatar.jpg
+logo: /images/avatar-190.jpg
+last_modified_at: "2026-08-16"
+author:
+  name: David Gitman
+  url: https://davidgitman.com/
+  twitter: dgitman
 twitter:
   username: dgitman
   card: summary_large_image
@@ -12,6 +17,16 @@ twitter:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /images/og-banner.jpg
+        width: 1200
+        height: 630
+        alt: David Gitman — Technology Leader in eCommerce, Cloud & AI
 
 # Build settings
 markdown: kramdown
@@ -55,7 +70,7 @@ resume_looking_for_work:        "yes"
 resume_section_experience:      true
 resume_section_education:       true
 resume_section_certifications:  true
-# resume_section_projects:        true
+resume_section_projects:        true
 resume_section_skills:          true
 resume_section_recognition:     true
 # resume_section_links:           true
@@ -100,6 +115,19 @@ resume_social_links:
   resume_spotify_url:           "https://open.spotify.com/user/dgitman"
   resume_soundcloud_url:        "https://soundcloud.com/dgitman"
 resume_print_social_links:      true
+
+# Public identity profiles used for Person.sameAs structured data. Keep this
+# intentionally narrower than the full contact/social icon list above.
+seo_same_as:
+  - https://www.linkedin.com/in/dgitman/
+  - https://github.com/dgitman
+  - https://stackoverflow.com/users/32814680/dgitman
+  - https://www.upwork.com/freelancers/dgitman
+  - https://wellfound.com/u/david-gitman
+  - https://www.youtube.com/@davidmgit
+  - https://medium.com/@dgitman
+  - https://bsky.app/profile/dgitman
+  - https://mastodon.social/@dgitman
 
 # Design settings
 resume_theme:                   default

@@ -3,6 +3,46 @@
 
 // util
 
+.site-nav {
+  @include sans;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d7d7d7;
+
+  a {
+    color: #333;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible { color: #767676; }
+
+    &[aria-current="page"] { border-bottom: 2px solid #333; }
+  }
+
+  .site-brand {
+    @include sans_bold;
+    white-space: nowrap;
+  }
+
+  .site-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: .45rem 1rem;
+    font-size: .9rem;
+  }
+
+  @include media_mobile {
+    align-items: flex-start;
+    flex-direction: column;
+
+    .site-nav-links { justify-content: flex-start; }
+  }
+}
+
 .section-header {
   @include section_border;
   margin-bottom: 1.5rem;
@@ -192,6 +232,134 @@
       color: #333;
     }
   }
+
+  .footer-line + .footer-line { margin-top: .5rem; }
+}
+
+// Long-form expertise and case-study pages
+
+.content-page { margin: 2rem 0 4rem; }
+
+.breadcrumbs {
+  @include sans;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  color: #777;
+  font-size: .85rem;
+  margin-bottom: 2rem;
+
+  a { color: #555; }
+}
+
+.content-page-header {
+  border-bottom: 4px solid #c7c7c7;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+
+  h1 {
+    @include sans_extrabold;
+    font-size: 2.75rem;
+    letter-spacing: -.1rem;
+    line-height: 1.05;
+    margin: 0;
+  }
+
+  .eyebrow {
+    @include sans_bold;
+    color: #777;
+    font-size: .8rem;
+    letter-spacing: .08rem;
+    margin: 0 0 .75rem;
+    text-transform: uppercase;
+  }
+
+  .lede {
+    font-size: 1.2rem;
+    line-height: 1.55;
+    margin: 1rem 0 0;
+  }
+}
+
+.prose {
+  h2,
+  h3 { @include sans_bold; }
+
+  h2 {
+    border-top: 2px solid #d7d7d7;
+    font-size: 1.65rem;
+    letter-spacing: -.04rem;
+    margin: 2.75rem 0 1rem;
+    padding-top: .75rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 2rem 0 .5rem;
+  }
+
+  a {
+    color: #333;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+
+    &:hover,
+    &:focus-visible { color: #767676; }
+  }
+
+  li + li { margin-top: .45rem; }
+
+  .card-grid,
+  .metric-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 1.5rem 0;
+
+    @include media_mobile { grid-template-columns: 1fr; }
+  }
+
+  .card,
+  .metric,
+  .callout {
+    border: 1px solid #d7d7d7;
+    padding: 1rem;
+  }
+
+  .card h2,
+  .card h3,
+  .metric h3 {
+    border: 0;
+    margin: 0 0 .5rem;
+    padding: 0;
+  }
+
+  .card p:last-child,
+  .metric p:last-child,
+  .callout p:last-child { margin-bottom: 0; }
+
+  .metric strong {
+    @include sans_extrabold;
+    display: block;
+    font-size: 1.75rem;
+    line-height: 1.1;
+  }
+
+  .callout {
+    border-left: 4px solid #333;
+    margin: 2rem 0;
+  }
+
+  .next-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem 1.25rem;
+    margin-top: 2rem;
+  }
+}
+
+@include media_mobile {
+  .content-page-header h1 { font-size: 2.1rem; }
 }
 
 .print-only { display: none !important }
