@@ -1,6 +1,8 @@
 _site
 .sass-cache
+.jekyll-cache
 .DS_Store
 _vendor
 /output/
 /tmp/
+/work/

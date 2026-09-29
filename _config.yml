@@ -30,6 +30,14 @@ defaults:
 
 # Build settings
 markdown: kramdown
+exclude:
+  - Dockerfile
+  - README.md
+  - bin
+  - work
+  - outputs
+  - output
+  - tmp
 sass:
   sass_dir: _sass
   style: compressed

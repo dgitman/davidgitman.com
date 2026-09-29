@@ -1,4 +1,4 @@
-FROM ruby:2.7
+FROM ruby:3.4.11
 
 WORKDIR /home/app
 
