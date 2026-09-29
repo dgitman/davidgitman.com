@@ -11,6 +11,7 @@
 To test locally, run the following in your terminal:
 
 1. Clone repo locally
+1. Install the Ruby version in `.ruby-version` (also used by GitHub Actions)
 1. `bundle install`
 2. `bundle exec jekyll serve`
 3. Open your browser to `localhost:4000`
@@ -38,7 +39,20 @@ Most of the content configuration will take place in the `/_layouts/resume.html`
 
 ### Publishing to GitHub Pages for free
 
-[GitHub Pages](https://pages.github.com/) will host this for free with your GitHub account. Just make sure you're using a `gh-pages` branch, and the site will automatically be available at `yourusername.github.io/resume-template` (you can rename the repo to resume for your own use if you want it to be available at `yourusername.github.io/resume`). You can also add a CNAME if you want it to be available at a custom domain...
+The site builds with Jekyll 4 and explicitly declared plugins rather than the
+`github-pages` gem. The theme is local (`_layouts`, `_includes`, and `_sass`);
+`jekyll-remote-theme` and its `rubyzip` dependency are not needed.
+
+In repository **Settings → Pages → Build and deployment**, set **Source** to
+**GitHub Actions** when activating this workflow. The workflow in
+`.github/workflows/pages.yml` checks pull requests and builds and deploys pushes
+to `main`. It can also be run manually on `main`. Pull requests never deploy.
+The build uses an empty base URL for the root-level custom domain `davidgitman.com`;
+keep `CNAME` and the existing domain/DNS configuration.
+
+Before deployment, run `JEKYLL_ENV=production bundle exec jekyll build --trace`
+and check the generated HTML, CSS, sitemap, and custom domain file in `_site`.
+Commit `Gemfile.lock` changes with dependency updates so CI uses the same versions.
 
 ### Configuring with your own domain name
 
